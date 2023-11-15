@@ -32,6 +32,7 @@
             countries.add("Morocco");
             countries.add("Tunisia");
             countries.add("Lebanon");
+            countries.add("Palestine");
 
             adapter = new MyAdapter(this, countries);
             lv.setAdapter(adapter);
@@ -42,7 +43,7 @@
                     String newCountry = editText.getText().toString();
                     if (!newCountry.isEmpty()) {
                         countries.add(newCountry);
-                        lv.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
                         editText.setText("");
                     }
                 }
